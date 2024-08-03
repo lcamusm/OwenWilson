@@ -5,6 +5,7 @@ import Landing from './pages/Landing';
 import DirectorsList from './pages/DirectorsList';
 import LongestMovie from './pages/LongestMovie';
 import FirstAndLastWow from './pages/FirstAndLastWow';
+import MedianWow from './pages/MedianWow';
 
 const AppRouter = () => {
   return (
@@ -15,6 +16,7 @@ const AppRouter = () => {
         <Route path="/directors" element={<DirectorsList />} />
         <Route path="/longest-movie" element={<LongestMovie />} />
         <Route path="/first-last" element={<FirstAndLastWow />} />
+        <Route path="/median" element={<MedianWow />} />
       </Routes>
     </Router>
   );

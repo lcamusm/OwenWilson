@@ -38,6 +38,7 @@ const FirstAndLastWow = () => {
     return (
         <div className="p-6">
             <h2 className="text-3xl font-semibold mb-4">Primer y Último "wow"</h2>
+            <p className="text-lg mb-4">Aquí puedes ver el primer y el último "wow" dichos por Owen Wilson.</p>
             <div className="bg-gray-800 text-black p-4 rounded-lg mb-4">
                 <h3 className="text-2xl font-semibold mb-2">Primer "wow"</h3>
                 <p><strong>Película:</strong> {firstWow.movie}</p>
