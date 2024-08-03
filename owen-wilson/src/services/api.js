@@ -17,3 +17,8 @@ export const fetchWowDetails = async (movie) => {
     const response = await axios.get(`${api_url}/wows/random?movie=${movie}`);
     return response.data;
 }
+
+export const fetchWowByIndex = async (index) => {
+    const response = await axios.get(`${api_url}/wows/ordered/${index}`);
+    return response.data;
+}

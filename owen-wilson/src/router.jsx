@@ -4,6 +4,7 @@ import MoviesList from './pages/MoviesList';
 import Landing from './pages/Landing';
 import DirectorsList from './pages/DirectorsList';
 import LongestMovie from './pages/LongestMovie';
+import FirstAndLastWow from './pages/FirstAndLastWow';
 
 const AppRouter = () => {
   return (
@@ -13,6 +14,7 @@ const AppRouter = () => {
         <Route path="/movies" element={<MoviesList />} />
         <Route path="/directors" element={<DirectorsList />} />
         <Route path="/longest-movie" element={<LongestMovie />} />
+        <Route path="/first-last" element={<FirstAndLastWow />} />
       </Routes>
     </Router>
   );

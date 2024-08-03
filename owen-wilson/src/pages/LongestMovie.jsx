@@ -13,10 +13,8 @@ const LongestMovie = () => {
             try {
                 const movies = await fetchMovies();
                 setMovies(movies);
-
                 let longestMovie = null;
                 let longestDuration = 0;
-
                 for (const movie of movies) {
                     const details = await fetchWowDetails(movie);
                     console.log("Details for", movie, details);

@@ -19,7 +19,7 @@ function Buttons() {
           Película más larga
         </button>
       </Link>
-      <Link to="/firstlast" className="flex-grow max-w-xs">
+      <Link to="/first-last" className="flex-grow max-w-xs">
         <button className="w-full bg-black text-white py-2 px-6 rounded-lg shadow-md hover:bg-[#000000] focus:outline-none focus:ring-2 focus:ring-white transition duration-300">
           Primer y último "wow"
         </button>
