@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { fetchMovies } from "../services/api";
+import React, { useState, useEffect } from 'react';
+import { fetchMovies } from '../services/api';
 import { Link } from 'react-router-dom';
+import { Loading } from '../components/Loading';
 
 const MoviesList = () => {
     const [movies, setMovies] = useState([]);
     const [originalMovies, setOriginalMovies] = useState([]);
     const [sortOrder, setSortOrder] = useState("asc");
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const getMovies = async () => {
@@ -14,6 +16,7 @@ const MoviesList = () => {
             setOriginalMovies(data.filter(movie => movie));
         };
         getMovies();
+        setLoading(false);
     }, []);
 
     const handleSort = (order) => {
@@ -33,6 +36,10 @@ const MoviesList = () => {
         setMovies(sortedMovies);
         setSortOrder(order);
     };
+
+    if (loading) {
+        return <Loading />;
+    }
 
     return (
         <div className="p-5 mt-1 space-y-4">

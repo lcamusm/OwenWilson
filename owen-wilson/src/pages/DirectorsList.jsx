@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { fetchDirectors } from "../services/api";
+import React, { useState, useEffect } from 'react';
+import { fetchDirectors } from '../services/api';
 import { Link } from 'react-router-dom';
+import { Loading } from '../components/Loading';
 
 const DirectorsList = () => {
     const [directors, setDirectors] = useState([]);
     const [originalDirectors, setOriginalDirectors] = useState([]);
     const [sortOrder, setSortOrder] = useState("asc");
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const getDirectors = async () => {
@@ -14,6 +16,7 @@ const DirectorsList = () => {
             setOriginalDirectors(data.filter(director => director));
         };
         getDirectors();
+        setLoading(false);
     }, []);
 
     const handleSort = (order) => {
@@ -33,6 +36,10 @@ const DirectorsList = () => {
         setDirectors(sortedDirectors);
         setSortOrder(order);
     };
+
+    if (loading) {
+        return <Loading />;
+    }
 
     return (
         <div className="p-5 mt-1 space-y-4">
